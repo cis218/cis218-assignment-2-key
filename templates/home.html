@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}
+Home
+{% endblock title %}
+{% block content %}
+<h1>Todo List</h1>
+<a href="{% url 'admin:todo_todo_add' %}" class="btn btn-primary">
+  <i class="bi bi-plus-circle"></i> Add Todo
+</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name of Thing Todo</th>
+      <th scope="col">Date to Complete</th>
+      <th scope="col" class="text-end">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for todo in todo_list %}
+      <tr>
+        <td>{{ todo.name }}</td>
+        <td>{{ todo.complete_by }}</td>
+        <td class="text-end">
+          <a href="{% url 'admin:todo_todo_change' todo.pk %}" class="btn btn-success">
+            <i class="bi bi-pencil"></i> Edit
+          </a>
+          <a href="{% url 'admin:todo_todo_delete' todo.pk %}" class="btn btn-danger">
+            <i class="bi bi-x-circle"></i> Delete
+          </a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}
