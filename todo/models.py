@@ -1,3 +1,8 @@
+"""
+David Barnes
+CIS218
+08-21-22
+"""
 from django.db import models
 
 
