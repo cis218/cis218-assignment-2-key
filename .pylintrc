@@ -31,7 +31,7 @@ limit-inference-results=100
 load-plugins=pylint_django
 
 # Provide the path to the settings for the pylint_django plugin
-django-settings-module=django_project.settings.settings
+django-settings-module=django_project.settings
 
 # Pickle collected data for later comparisons.
 persistent=yes
@@ -67,9 +67,9 @@ disable=arguments-differ,
     broad-except,
     consider-using-f-string,
     duplicate-code,
+    missing-module-docstring,
     no-else-raise,
     no-else-return,
-    no-self-use,
     signature-differs,
     too-few-public-methods,
     too-many-ancestors,
@@ -136,9 +136,7 @@ expected-line-ending-format=
 # Allow long lines if they have any of the following:
 # - URL
 # - def test_{long_function_name}
-# - PHP: test_file.php:test_function
-#   Used to signify which O2G test an O3G test replaces, in it's docstring.
-ignore-long-lines=([^A-Za-z0-9_]https?:\/\/\S+|(\s|^)def test_|PHP: \w+\.php:\w+| pragma: )
+ignore-long-lines=([^A-Za-z0-9_]https?:\/\/\S+|(\s|^)def test_| pragma: )
 
 # Number of spaces of indent required inside a hanging or continued line.
 indent-after-paren=4
